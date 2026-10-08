@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BELAJAR SAHAM — belajar trading saham dengan cara yang sederhana, interaktif, dan realistis.">
+  <title>BELAJAR SAHAM — Belajar Trading Tanpa Tebak-tebakan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070b0d; --panel:#0d1316; --panel2:#11191d; --line:#203036;
+      --text:#f4f8f7; --muted:#91a4a7; --green:#39e58c; --green2:#18b86b;
+      --red:#ff6675; --yellow:#ffd166; --cyan:#5dd9ff; --shadow:0 24px 80px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Manrope,system-ui,sans-serif;background:
+      radial-gradient(circle at 80% 0%,rgba(57,229,140,.10),transparent 28rem),
+      radial-gradient(circle at 10% 35%,rgba(93,217,255,.06),transparent 25rem),var(--bg);
+      color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;
+      background:rgba(7,11,13,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+    .brand{font-weight:800;letter-spacing:-.04em;font-size:1.1rem}.brand span{color:var(--green)}
+    .navlinks{display:flex;gap:28px;color:#a9b8ba;font-size:.9rem}.navlinks a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:12px;border:1px solid var(--line);
+      font-weight:700;font-size:.88rem;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#365058}
+    .btn.primary{background:var(--green);color:#04120b;border-color:var(--green);box-shadow:0 10px 35px rgba(57,229,140,.15)}
+    .hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:55px;padding:75px 0 80px}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--green);font:500 .76rem 'DM Mono';text-transform:uppercase;letter-spacing:.13em;margin-bottom:20px}
+    .dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 18px var(--green)}
+    h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.94;letter-spacing:-.065em;max-width:760px}
+    h1 em{font-style:normal;color:var(--green)}.hero p{color:var(--muted);font-size:1.04rem;max-width:610px;margin:25px 0 30px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}.trust{display:flex;gap:24px;margin-top:30px;color:#73878a;font-size:.78rem}
+    .terminal{background:linear-gradient(145deg,#10181b,#090e10);border:1px solid #26363b;border-radius:22px;box-shadow:var(--shadow);overflow:hidden;transform:rotate(1deg)}
+    .terminal-top{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;border-bottom:1px solid var(--line);font:500 .72rem 'DM Mono';color:#799095}
+    .lights{display:flex;gap:6px}.lights i{width:8px;height:8px;border-radius:50%;background:#344449}.chart-wrap{padding:20px}
+    .ticker{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}.ticker strong{font:500 1.5rem 'DM Mono'}.up{color:var(--green)}
+    .chart{height:250px;position:relative;border-left:1px solid #203036;border-bottom:1px solid #203036;
+      background:repeating-linear-gradient(to right,transparent 0 69px,rgba(255,255,255,.035) 70px),
+      repeating-linear-gradient(to bottom,transparent 0 49px,rgba(255,255,255,.035) 50px)}
+    .chart svg{width:100%;height:100%;overflow:visible}.chart .area{fill:url(#grad);opacity:.18}.chart .line{fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 5px rgba(57,229,140,.45))}
+    .price-tag{position:absolute;right:-1px;top:28%;background:var(--green);color:#03120a;padding:4px 7px;font:500 .68rem 'DM Mono';border-radius:5px}
+    .mini-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.mini{background:#0c1316;border:1px solid var(--line);padding:10px;border-radius:9px}.mini small{display:block;color:#667b80;font-size:.65rem}.mini b{font:500 .75rem 'DM Mono'}
+    section{padding:95px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}.section-head h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.05em}.section-head p{max-width:480px;color:var(--muted)}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:rgba(13,19,22,.75);border:1px solid var(--line);border-radius:17px;padding:25px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#355058}
+    .num{font:500 .7rem 'DM Mono';color:var(--green);margin-bottom:28px}.card h3{font-size:1.15rem;margin-bottom:9px}.card p{color:var(--muted);font-size:.88rem}
+    .sim{background:linear-gradient(135deg,#0c1515,#0b1114);border:1px solid #294038;border-radius:22px;padding:30px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+    .sim h2{font-size:2.4rem;letter-spacing:-.05em}.sim p{color:var(--muted);margin:12px 0 25px;font-size:.9rem}
+    label{display:block;font-size:.76rem;color:#8ca0a3;margin-bottom:7px}.input{display:flex;align-items:center;background:#080e10;border:1px solid var(--line);border-radius:11px;padding:0 12px;margin-bottom:13px}.input span{color:#718387}.input input{width:100%;background:none;border:0;outline:0;color:white;padding:12px;font:500 .9rem 'DM Mono'}
+    .result{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{padding:19px;border:1px solid var(--line);background:#0a1113;border-radius:13px}.metric small{display:block;color:#718387;font-size:.7rem}.metric strong{display:block;margin-top:5px;font:500 1.1rem 'DM Mono'}.green{color:var(--green)}.red{color:var(--red)}
+    .lessons{display:grid;grid-template-columns:1fr 1fr;gap:15px}.lesson{display:flex;gap:18px;padding:22px;border:1px solid var(--line);border-radius:15px;background:#0c1215}.lesson-icon{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:#12221b;color:var(--green);font-weight:800}.lesson h3{font-size:1rem}.lesson p{color:var(--muted);font-size:.82rem;margin-top:5px}
+    .quote{padding:50px;border:1px solid var(--line);border-radius:22px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(57,229,140,.09),transparent 50%),#0b1113}.quote blockquote{font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.25;letter-spacing:-.035em;max-width:800px;margin:auto}.quote span{display:block;color:var(--green);font:500 .7rem 'DM Mono';margin-top:20px;letter-spacing:.12em}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#63767a;font-size:.75rem;display:flex;justify-content:space-between;gap:20px}
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.terminal{transform:none}.grid3{grid-template-columns:1fr}.sim{grid-template-columns:1fr}.lessons{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}}
+    @media(max-width:480px){h1{font-size:3.3rem}.trust{gap:12px;flex-wrap:wrap}.result{grid-template-columns:1fr}.sim{padding:21px}}
+  </style>
+
+<style>
+#paper-trading{margin:60px auto;padding:28px;border:1px solid #26383b;border-radius:20px;background:#0b1214;color:#fff}
+#paper-trading h2{margin:0 0 8px;font-size:32px}
+#paper-trading .sub{color:#91a1a5;margin-bottom:20px}
+.pt-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pt-card{background:#101a1c;border:1px solid #26383b;border-radius:15px;padding:18px}
+.pt-balance{font-size:22px;font-weight:700;margin:8px 0 18px}
+.pt-stocks{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.pt-stock{padding:12px;border:1px solid #2a3b3e;border-radius:10px;background:#0b1315;cursor:pointer}
+.pt-stock.selected{border-color:#4caf78}
+.pt-stock b{display:block}.pt-stock span{font-size:13px;color:#a5b2b5}
+.pt-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+.pt-controls input,.pt-controls select{width:100%;box-sizing:border-box;padding:12px;border-radius:9px;border:1px solid #34484b;background:#091012;color:#fff}
+.pt-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.pt-buttons button{padding:13px;border:0;border-radius:9px;font-weight:700;cursor:pointer}
+.pt-buy{background:#35b86b;color:#04120a}.pt-sell{background:#d9535f;color:white}
+.pt-holding{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #26383b}
+.pt-note{font-size:12px;color:#91a1a5;margin-top:14px}
+@media(max-width:700px){.pt-grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<nav><div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+  <a class="brand" href="#">EDUKASI <span>SAHAM.</span></a>
+  <div class="navlinks"><a href="#belajar">Belajar</a><a href="#simulator">Simulator</a><a href="#roadmap">Roadmap</a></div>
+  <a class="btn primary" href="#simulator">Mulai belajar →</a>
+</div></nav>
+
+<main>
+<section class="hero container">
+  <div class="reveal">
+    <div class="eyebrow"><i class="dot"></i> Trading • Risk • Strategy</div>
+    <h1>Jangan cuma lihat <em>candle.</em><br>Pelajari ceritanya.</h1>
+    <p>BELAJAR SAHAM adalah ruang belajar trading saham untuk pemula. Kenali chart, pahami risiko, dan bangun keputusan yang lebih masuk akal—bukan sekadar ikut-ikutan.</p>
+    <div class="actions"><a class="btn primary" href="#belajar">Eksplor materi</a><a class="btn" href="#simulator">Coba simulator</a></div>
+    <div class="trust"><span>✓ Gratis dipelajari</span><span>✓ Bahasa sederhana</span><span>✓ Fokus manajemen risiko</span></div>
+  </div>
+  <div class="terminal reveal">
+    <div class="terminal-top"><span>BELAJAR_SAHAM / MARKET VIEW</span><span class="lights"><i></i><i></i><i></i></span></div>
+    <div class="chart-wrap">
+      <div class="ticker"><div><small style="color:#718387">CONTOH • ABCD</small><br><strong>1.245</strong></div><div class="up">+4,18%</div></div>
+      <div class="chart"><svg viewBox="0 0 600 250" preserveAspectRatio="none">
+        <defs><linearGradient id="grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#39e58c"/><stop offset="1" stop-color="#39e58c" stop-opacity="0"/></linearGradient></defs>
+        <path class="area" d="M0 215 C45 190,55 205,85 174 S125 195,155 155 S205 168,235 125 S280 148,315 110 S350 135,385 96 S420 120,450 75 S490 105,520 53 S565 78,600 25 V250 H0Z"/>
+        <path class="line" d="M0 215 C45 190,55 205,85 174 S125 195,155 155 S205 168,235 125 S280 148,315 110 S350 135,385 96 S420 120,450 75 S490 105,520 53 S565 78,600 25"/>
+      </svg><span class="price-tag">1.245</span></div>
+      <div class="mini-row"><div class="mini"><small>OPEN</small><b>1.180</b></div><div class="mini"><small>HIGH</small><b class="up">1.260</b></div><div class="mini"><small>VOLUME</small><b>28,4M</b></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="belajar" class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">01 / FOUNDATION</div><h2>Mulai dari yang<br>benar-benar penting.</h2></div><p>Trading bukan menebak harga besok. Kamu perlu memahami bagaimana harga bergerak, di mana risiko berada, dan kapan harus berhenti.</p></div>
+  <div class="grid3">
+    <article class="card reveal"><div class="num">01 — MARKET</div><h3>Kenali pasar</h3><p>Pahami saham, IHSG, lot, bid-offer, volume, likuiditas, ARA/ARB, dan istilah yang sering muncul di layar trading.</p></article>
+    <article class="card reveal"><div class="num">02 — CHART</div><h3>Baca pergerakan</h3><p>Pelajari candlestick, trend, support-resistance, breakout, pullback, serta cara membaca volume sebagai konfirmasi.</p></article>
+    <article class="card reveal"><div class="num">03 — RISK</div><h3>Lindungi modal</h3><p>Kenali position sizing, stop loss, risk-reward, dan mengapa menjaga modal lebih penting daripada mengejar satu transaksi.</p></article>
+  </div>
+</section>
+
+<section id="simulator" class="container">
+  <div class="sim reveal">
+    <div><div class="eyebrow">02 / MINI SIMULATOR</div><h2>Hitung sebelum klik <em style="color:var(--green)">BUY.</em></h2>
+      <p>Masukkan harga beli, jumlah lot, dan target. Simulator ini hanya untuk latihan—bukan prediksi pasar.</p>
+      <label>HARGA BELI</label><div class="input"><span>Rp</span><input id="price" type="number" value="1000" min="1"></div>
+      <label>JUMLAH LOT</label><div class="input"><input id="lots" type="number" value="10" min="1"><span>lot</span></div>
+      <label>TARGET HARGA</label><div class="input"><span>Rp</span><input id="target" type="number" value="1200" min="1"></div>
+      <button class="btn primary" style="width:100%;justify-content:center" onclick="calculate()">Hitung simulasi</button>
+    </div>
+    <div class="result" id="result">
+      <div class="metric"><small>MODAL</small><strong id="modal">Rp1.000.000</strong></div>
+      <div class="metric"><small>NILAI TARGET</small><strong id="value" class="green">Rp1.200.000</strong></div>
+      <div class="metric"><small>POTENSI SELISIH</small><strong id="profit" class="green">+Rp200.000</strong></div>
+      <div class="metric"><small>RETURN</small><strong id="return" class="green">+20,00%</strong></div>
+      <div class="metric" style="grid-column:1/-1"><small>CATATAN</small><strong style="font-family:Manrope;font-size:.85rem;color:#9aabad">Belum memperhitungkan fee broker dan pajak. Hasil bukan jaminan keuntungan.</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">03 / ROADMAP</div><h2>Naik level,<br>satu langkah.</h2></div><p>Jangan buru-buru mencari saham “yang akan terbang”. Bangun sistem belajarmu dulu.</p></div>
+  <div class="lessons">
+    <div class="lesson reveal"><div class="lesson-icon">01</div><div><h3>Dasar pasar modal</h3><p>Saham, lot, broker, order, bid-offer, dan mekanisme perdagangan.</p></div></div>
+    <div class="lesson reveal"><div class="lesson-icon">02</div><div><h3>Technical analysis</h3><p>Trend, support-resistance, candlestick, volume, dan setup sederhana.</p></div></div>
+    <div class="lesson reveal"><div class="lesson-icon">03</div><div><h3>Risk management</h3><p>Tentukan risiko per transaksi dan ukuran posisi sebelum masuk.</p></div></div>
+    <div class="lesson reveal"><div class="lesson-icon">04</div><div><h3>Trading journal</h3><p>Catat alasan entry, exit, hasil, dan kesalahan agar keputusan berikutnya lebih baik.</p></div></div>
+  </div>
+</section>
+
+<section class="container"><div class="quote reveal"><blockquote>“Tujuan pertama trader bukan menghasilkan uang sebanyak mungkin. Tujuan pertamanya adalah <em style="color:var(--green);font-style:normal">bertahan cukup lama untuk belajar.</em>”</blockquote><span>BELAJAR SAHAM / MINDSET</span></div></section>
+</main>
+
+<footer class="container"><span>© 2026 BELAJAR SAHAM — Website edukasi.</span><span>Materi bersifat edukasi, bukan rekomendasi investasi.</span></footer>
+
+<script>
+function rupiah(n){return new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n)}
+function calculate(){
+  const p=Number(document.getElementById('price').value)||0;
+  const l=Number(document.getElementById('lots').value)||0;
+  const t=Number(document.getElementById('target').value)||0;
+  const modal=p*l*100, value=t*l*100, diff=value-modal, ret=modal?diff/modal*100:0;
+  document.getElementById('modal').textContent=rupiah(modal);
+  document.getElementById('value').textContent=rupiah(value);
+  document.getElementById('profit').textContent=(diff>=0?'+':'-')+rupiah(Math.abs(diff)).replace('Rp','Rp');
+  document.getElementById('profit').className=diff>=0?'green':'red';
+  document.getElementById('return').textContent=(ret>=0?'+':'')+ret.toFixed(2).replace('.',',')+'%';
+  document.getElementById('return').className=ret>=0?'green':'red';
+}
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+calculate();
+</script>
+
+<section id="paper-trading">
+  <h2>📈 Simulasi Jual Beli Saham</h2>
+  <div class="sub">Latihan trading menggunakan uang virtual — bukan transaksi saham sungguhan.</div>
+  <div class="pt-grid">
+    <div class="pt-card">
+      <div>Saldo virtual</div>
+      <div class="pt-balance" id="ptCash">Rp10.000.000</div>
+      <div class="pt-stocks" id="ptStocks"></div>
+      <div class="pt-controls">
+        <select id="ptSymbol"></select>
+        <input id="ptLots" type="number" min="1" value="1" placeholder="Jumlah lot">
+      </div>
+      <div class="pt-buttons">
+        <button class="pt-buy" onclick="ptTrade('buy')">BELI</button>
+        <button class="pt-sell" onclick="ptTrade('sell')">JUAL</button>
+      </div>
+      <div class="pt-note" id="ptMessage">Pilih saham dan jumlah lot.</div>
+    </div>
+    <div class="pt-card">
+      <b>Portfolio Saya</b>
+      <div id="ptPortfolio" style="margin-top:12px"></div>
+      <button onclick="ptReset()" style="margin-top:15px;padding:9px;border-radius:8px;background:transparent;color:#fff;border:1px solid #34484b;cursor:pointer">Reset akun</button>
+    </div>
+  </div>
+</section>
+
+
+<script>
+(function(){
+const prices={BBCA:8750,BBRI:4320,TLKM:3120,ASII:4870,BMRI:6100,GOTO:62};
+let s=JSON.parse(localStorage.getItem('ptAccount')||'null')||{cash:10000000,holdings:{}};
+
+function rp(n){return 'Rp'+Math.round(n).toLocaleString('id-ID')}
+function save(){localStorage.setItem('ptAccount',JSON.stringify(s))}
+function render(){
+ document.getElementById('ptCash').textContent=rp(s.cash);
+ const grid=document.getElementById('ptStocks');
+ grid.innerHTML=Object.keys(prices).map(k=>`<div class="pt-stock"><b>${k}</b><span>${rp(prices[k])} / lembar</span></div>`).join('');
+ const sel=document.getElementById('ptSymbol');
+ sel.innerHTML=Object.keys(prices).map(k=>`<option value="${k}">${k} — ${rp(prices[k])}</option>`).join('');
+ const p=document.getElementById('ptPortfolio');
+ const h=Object.entries(s.holdings).filter(x=>x[1]>0);
+ p.innerHTML=h.length?h.map(([k,l])=>`<div class="pt-holding"><span><b>${k}</b><br><small>${l} lot</small></span><b>${rp(prices[k]*l*100)}</b></div>`).join(''):'<div class="pt-note">Belum ada saham. Coba beli 1 lot.</div>';
+}
+window.ptTrade=function(type){
+ const k=document.getElementById('ptSymbol').value, lots=Math.floor(+document.getElementById('ptLots').value||0);
+ if(lots<1){document.getElementById('ptMessage').textContent='Jumlah lot minimal 1.';return}
+ const value=prices[k]*lots*100; s.holdings[k]=s.holdings[k]||0;
+ if(type==='buy'){
+   if(s.cash<value){document.getElementById('ptMessage').textContent='Saldo virtual tidak cukup.';return}
+   s.cash-=value;s.holdings[k]+=lots;
+ }else{
+   if(s.holdings[k]<lots){document.getElementById('ptMessage').textContent='Lot yang dimiliki tidak cukup.';return}
+   s.cash+=value;s.holdings[k]-=lots;
+ }
+ save();render();
+ document.getElementById('ptMessage').textContent=(type==='buy'?'Berhasil membeli ':'Berhasil menjual ')+lots+' lot '+k+' (simulasi).';
+}
+window.ptReset=function(){s={cash:10000000,holdings:{}};save();render();document.getElementById('ptMessage').textContent='Akun direset.'}
+render();
+})();
+</script>
+
+</body>
+</html>
